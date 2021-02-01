@@ -6,43 +6,43 @@ class RankSearch {
 
         var idx = 0
 
+        //info java backend junior pizza 150
+        //query java and backend and junior and pizza 100
         for (que in query) {
-            println(que)
-            val token = que.replace("and ", "").split(" ")
+            val queToken = que.replace("and ", "").split(" ")
+
             var cnt = 0
 
             for (inf in info) {
-                var isPossible = true
+                val infToken = inf.split(" ")
 
-                for (value in token) {
-                    if (value == "-") continue
-
-                    if (value.toIntOrNull() ?: -1 != -1) {
-                        val temp = inf.split(" ").last()
-
-                        if (temp.toIntOrNull() ?: -1 != -1) {
-                            if (value.toInt() > temp.toInt()) {
-                                isPossible = false
-                                break
-                            }
-                        }
-                    } else {
-                        if (!inf.contains(value)) {
-//                            println("B $inf $value")
-                            isPossible = false
-                            break;
-                        }
-                    }
+                if (queToken[4].toInt() > infToken[4].toInt()) {
+                    continue
                 }
-                if (isPossible) cnt += 1
-//                println("[$idx] $inf $isPossible $cnt")
-            }
 
+                if (queToken[0] != "-" && queToken[0] != infToken[0]) {
+                    continue
+                }
+
+                if (queToken[1] != "-" && queToken[1] != infToken[1]) {
+                    continue
+                }
+
+                if (queToken[2] != "-" && queToken[2] != infToken[2]) {
+                    continue
+                }
+
+                if (queToken[3] != "-" && queToken[3] != infToken[3]) {
+                    continue
+                }
+
+                cnt++
+            }
             answer[idx++] = cnt
         }
 
-//        for (temp in answer)
-//            println(temp)
+        for (temp in answer)
+            println(temp)
 
         return answer
     }
