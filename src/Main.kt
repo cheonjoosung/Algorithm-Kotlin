@@ -14,5 +14,11 @@ fun main () {
         "- and - and - and - 150")
     //[1,1,1,1,2
 
+
+    /*
+     LV1~LV2 7문제 풀기
+     조이스틱, 메뉴 리뉴얼, 순위 검색, 쿼드압 후 개수세기
+     이진변환 반복, 수식 최대화, 후보키
+     */
     println(rankSearch.solution(info, query))
 }
