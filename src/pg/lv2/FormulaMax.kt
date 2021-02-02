@@ -19,7 +19,31 @@ class FormulaMax {
         tokenExp = tokenExp.subList(1, tokenExp.size-1)
 
         for (expArr in expPrior.iterator()) {
-            
+            var tempTokenNum = tokenNum.toMutableList()
+            var tempTokenExp = tokenExp.toMutableList()
+
+            for (exp in expArr) {
+                while (tempTokenExp.indexOf((exp.toString())) != -1) {
+                    val idx = tempTokenExp.indexOf(exp.toString())
+
+                    /*
+                    1.tokenNum 에서 idx & idx+1 를 계산 후 tokenNum 재수정
+                    2.tokenExp또 빠졌으니까 해당 인덱스 지우기
+                     (100, 200, 300, 500) (- + *) idx=1 exp=+ => (100, 300, 500) (-, *)
+                     */
+                    val first = tempTokenNum[idx].toLong()
+                    val second = tempTokenNum[idx+1].toLong()
+
+                    val res = cal(first, second, exp)
+
+                    tempTokenNum[idx]= res.toString()
+                    tempTokenNum.removeAt(idx+1)
+                    tempTokenExp.removeAt(idx)
+                }
+            }
+
+            if (tempTokenNum.size == 1)
+                answer = Math.max(answer, Math.abs(tempTokenNum[0].toLong()))
         }
 
         return answer
