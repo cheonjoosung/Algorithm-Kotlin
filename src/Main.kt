@@ -1,8 +1,9 @@
 import pg.lv2.*
 
 fun main () {
-    val fmx = FormulaMax()
+    val td = TwoDigit()
 
-    println(fmx.solution("100-200*300-500+20")) //60420
-    println(fmx.solution("50*6-3*2")) //300
+    println(td.solution("110010101001")) //60420
+    println(td.solution("01110")) //300
+    println(td.solution("1111111")) //300
 }
