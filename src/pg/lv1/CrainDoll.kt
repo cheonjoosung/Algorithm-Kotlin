@@ -44,7 +44,7 @@ class CrainDoll {
 
             val res = temp[pos].firstOrNull { it != 0 }
 
-            if (res != null) {
+            res?.let {
                 val jIdx = temp[pos].indexOf(res)
                 temp[pos][jIdx] = 0
 
