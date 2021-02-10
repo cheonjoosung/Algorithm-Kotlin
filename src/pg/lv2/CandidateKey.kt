@@ -16,7 +16,7 @@ class CandidateKey {
         3-2. 나머지 벨류에서 이름 중복 (appeach), 전공 중복 (컴퓨터,뮤직), 학년 중복(2, 3)
         4. 정렬 활용하여 앞뒤로 체크?
          */
-       
+
         return answer
     }
 }
