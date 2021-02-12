@@ -1,6 +1,11 @@
+import backjun.g3.Bitonic
 import backjun.p1000_1999.PrintQueue
 import pg.lv1.CrainDoll
 import pg.lv2.*
+import java.io.BufferedReader
+import java.io.InputStream
+import java.io.InputStreamReader
+import java.lang.StringBuilder
 import java.util.*
 
 fun main() {
@@ -23,5 +28,9 @@ fun main() {
     ]*/
 
     //println(c.solution(arr)) //2
+
+    val btc = Bitonic()
+    btc.solution()
+
 }
 
