@@ -3,66 +3,34 @@ package backjun.g3
 import java.util.*
 
 class Bitonic {
+
     fun solution() {
         val sc = Scanner(System.`in`)
+        var answer = 1
 
         val n = sc.nextInt()
-        var arr = mutableListOf<Int>()
+        var num = Array<Int>(n) { 0 }
+        var dp = Array<Int>(1001) { 1 }
+        var dp2 = Array<Int>(1002) { 0 }
 
         for (i in 0 until n)
-            arr.add(sc.nextInt())
+            num[i] = sc.nextInt()
 
-        /*
-        1. 모든 부분수열을 만들어야겠네? - 2의 n제곱 - 1
-        2. 맥스값의 인덱스 찾고 증가하다가 그 이후부터 감소하는지 확인하기
-         */
-        var answer = 1
-        for (i in 1..n) {
-            var isVisited = Array(n) { false }
-            findSubArray(arr, mutableListOf(), isVisited, i, 0, 0)
-        }
-
-
-    }
-
-    fun findSubArray(
-        arr: MutableList<Int>, temp: MutableList<Int>,
-        isVisited: Array<Boolean>, total: Int, cnt: Int, idx: Int
-    ) {
-
-        if (cnt == total) { // 바이토닉체크
-            val max = temp.maxByOrNull { it }
-
-            max?.let {
-                val maxIdx = temp.indexOfFirst { it == max }
-
-                println(temp)
-                for (i in 0..maxIdx) {
-                    print("${temp[i]} ")
-                }
-
-                print("// ")
-                for (i in maxIdx downTo temp.size-1) {
-                    print("${temp[i]}")
-                }
-                println()
+        for (i in 0 until n) {
+            for (j in 0 until i) {
+                if (num[j] < num[i]) dp[i] = Math.max(dp[i], dp[j] + 1) //앞에서 증가
             }
-            /*
-            1. 맥스인덱스 찾기
-            2. 0 to 맥스인덱스 증가하는가?
-            3. 맥스인덱스 to 마지막까지 감소하는가
-             */
-            return
+            answer = Math.max(answer, dp[i])
         }
-        for (i in idx until arr.size) {
-            if (isVisited[i]) continue
 
-            isVisited[i] = true
-            temp.add(arr[i])
-            findSubArray(arr, temp, isVisited, total, cnt + 1, i+1)
-
-            isVisited[i] = false
-            temp.remove(arr[i])
+        for (i in (n-1) downTo 0) {
+            for (j in (n-1) downTo (i+1)) {
+                if (num[j] < num[i]) dp2[i] = Math.max(dp2[i], dp2[j]+1) //뒤에서 증가
+            }
+            answer = Math.max(answer, dp[i]+dp2[i])
         }
+
+        println(answer)
+
     }
 }

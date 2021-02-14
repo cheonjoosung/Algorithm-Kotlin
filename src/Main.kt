@@ -8,6 +8,7 @@ import java.io.InputStreamReader
 import java.lang.StringBuilder
 import java.util.*
 
+private val answer = 4
 fun main() {
     /*
      LV1~LV2 7문제 풀기
