@@ -1,4 +1,5 @@
 import backjun.g3.Bitonic
+import backjun.g3.Panda
 import backjun.p1000_1999.PrintQueue
 import pg.lv1.CrainDoll
 import pg.lv2.*
@@ -30,8 +31,8 @@ fun main() {
 
     //println(c.solution(arr)) //2
 
-    val btc = Bitonic()
-    btc.solution()
+    val panda = Panda()
+    panda.solution()
 
 }
 
