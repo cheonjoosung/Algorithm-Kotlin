@@ -23,5 +23,19 @@ fun main() {
     ]*/
 
     //println(c.solution(arr)) //2
+
+    val a = "\\    /\\"
+    val b = " )  ( ')"
+    val c1 = "(  /  )"
+    val d = " \\(__)|"
+    println(a)
+    println(b)
+    println(c1)
+    println(d)
+
+    println ("\\    /\\")
+        println (" )  ( ')")
+        println ("(  /  )")
+        println (" \\(__)|")
 }
 

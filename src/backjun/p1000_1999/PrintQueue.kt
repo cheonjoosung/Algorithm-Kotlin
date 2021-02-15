@@ -28,6 +28,9 @@ class PrintQueue {
                 val max = arr.maxByOrNull { it.value }?.value //arr의 value로 Max를 찾고 그게없으면 null 반환
 
                 //max 가 null이 아닐경우 아래 코드 실행
+                /*
+                1.
+                 */
                 max?.let {
                     val dotTemp = arr[0]
                     arr.removeAt(0)
