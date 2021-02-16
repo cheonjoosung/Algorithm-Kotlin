@@ -1,8 +1,15 @@
+import backjun.g3.Bitonic
+import backjun.g3.Panda
 import backjun.p1000_1999.PrintQueue
 import pg.lv1.CrainDoll
 import pg.lv2.*
+import java.io.BufferedReader
+import java.io.InputStream
+import java.io.InputStreamReader
+import java.lang.StringBuilder
 import java.util.*
 
+private val answer = 4
 fun main() {
     /*
      LV1~LV2 7문제 풀기
@@ -23,19 +30,5 @@ fun main() {
     ]*/
 
     //println(c.solution(arr)) //2
-
-    val a = "\\    /\\"
-    val b = " )  ( ')"
-    val c1 = "(  /  )"
-    val d = " \\(__)|"
-    println(a)
-    println(b)
-    println(c1)
-    println(d)
-
-    println ("\\    /\\")
-        println (" )  ( ')")
-        println ("(  /  )")
-        println (" \\(__)|")
 }
 
