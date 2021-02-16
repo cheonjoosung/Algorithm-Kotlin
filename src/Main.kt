@@ -40,5 +40,13 @@ fun main() {
         )
     )
 
+    println(
+        sm.solution(
+            n = 6,
+            arr1 = arrayOf(46, 33, 33 ,22, 31, 50),
+            arr2 = arrayOf(27 ,56, 19, 14, 14, 10)
+        )
+    )
+
 }
 
