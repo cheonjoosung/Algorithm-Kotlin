@@ -2,6 +2,7 @@ import backjun.g3.Bitonic
 import backjun.g3.Panda
 import backjun.p1000_1999.PrintQueue
 import pg.lv1.CrainDoll
+import pg.lv1.SecretMap
 import pg.lv2.*
 import java.io.BufferedReader
 import java.io.InputStream
@@ -30,5 +31,14 @@ fun main() {
     ]*/
 
     //println(c.solution(arr)) //2
+    val sm = SecretMap()
+    println(
+        sm.solution(
+            n = 5,
+            arr1 = arrayOf(9, 20, 28, 18, 11),
+            arr2 = arrayOf(30, 1, 21, 17, 28)
+        )
+    )
+
 }
 
