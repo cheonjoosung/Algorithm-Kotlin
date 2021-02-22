@@ -10,7 +10,7 @@ class TriangleDalpang {
         */
 
         val endNum = n * (n + 1) / 2
-        val dx = intArrayOf(1, 0, -1)
+        val dx = intArrayOf(1, 0, -1) //우 상 대각선
         val dy = intArrayOf(0, 1, -1)
         var d = 0 //방향
         var x = 0

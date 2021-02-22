@@ -14,10 +14,14 @@ class SecretMap {
             arr2	[27 ,56, 19, 14, 14, 10]
             출력	["######", "### #", "## ##", " #### ", " #####", "### # "]
          */
+
+        //String StringBuilder()
+        //
+
         val ans = Array(n) { "" }
 
         for (i in 0 until n) {
-            var based = getBaseBinary(n)  //"000000"
+            val based = getBaseBinary(n)  //"000000"
 
             //1. 2진수로 바꾸기
             var n1 = arr1[i].toString(2)
