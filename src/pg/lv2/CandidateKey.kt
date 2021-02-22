@@ -17,6 +17,10 @@ class CandidateKey {
         4. 정렬 활용하여 앞뒤로 체크?
          */
 
+       for (i in 1..4) {
+
+       }
+
         return answer
     }
 }
