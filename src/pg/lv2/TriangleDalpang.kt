@@ -19,20 +19,27 @@ class TriangleDalpang {
         var answer = IntArray(endNum)
         var arr: Array<IntArray> = Array(n) { IntArray(n) }
 
+        /*
+        아래로 갔다가(x+1) 오른쪽으로 갔다가(y+1) 좌상향으로 갔다가(x-1, y-1)
+            1
+            2  9
+            3 10 8
+            4  5 6 7
+         */
         for (i in 1..endNum) {
             arr[x][y] = i
 
             val nx = x + dx[d]
             val ny = y + dy[d]
 
-            if (nx < 0 || ny < 0 || nx >= n || ny >= n) {
+            if (nx < 0 || ny < 0 || nx >= n || ny >= n) { //외벽인 경우 유턴
                 d = (d + 1) % 3
                 x += dx[d]
                 y += dy[d]
                 continue
             }
 
-            if (arr[nx][ny] != 0) {
+            if (arr[nx][ny] != 0) { //값이 할당되어있는 경우 방향전환
                 d = (d + 1) % 3
                 x += dx[d]
                 y += dy[d]
