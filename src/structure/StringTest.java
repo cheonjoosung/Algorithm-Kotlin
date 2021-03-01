@@ -1,5 +1,10 @@
 package structure;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
 public class StringTest {
     public static void main(String[] args) {
         /*
@@ -9,12 +14,12 @@ public class StringTest {
          - 이상한놈 : ""String"" 실제는 참조형인데 동작은 기본형처럼 */
 
         int val = 4;
-        String s = "abcd";
+        String s = "abcd"; //스트링을 Immutable Class 라고도해 네이버 면접에 자주나
         int [] arr = {0};
 
         /*
         2. Call By Value vs Call By Reference
-         - 기본형은 call by value
+         - 기본형은 call by value     값의
          - 참조형은 call by reference
         */
         System.out.println("CallByValue Before : " + val + " " + s);
@@ -49,7 +54,7 @@ public class StringTest {
             if (str == null)
                 return appendNull();
             int len = str.length();
-            ensureCapacityInternal(count + len);
+            ensureCapacityInternal(count + len);  char [] = size 4->7 "abcd" .append("ced")
             str.getChars(0, len, value, count);
             count += len;
             return this;

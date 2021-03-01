@@ -1,4 +1,5 @@
 import backjun.g3.PrimeNumContinue
+import backjun.g3.Sum
 import pg.lv2.*
 import java.util.*
 
@@ -11,7 +12,7 @@ fun main() {
     /*[
         ["100","ryan","music","2"],["200","apeach","math","2"],["300","tube","computer","3"],
         ["400","con","computer","4"],["500","muzi","music","3"],["600","apeach","music","2"]
-    ]*/
+    ]
     val c = CandidateKey()
     val arr: Array<Array<String>> = arrayOf(
         arrayOf("100", "ryan", "music", "2"),
@@ -24,7 +25,10 @@ fun main() {
     c.solution(arr)
 
     val p = PrimeNumContinue()
-    p.main()
+    p.main() */
 
+
+    val s = Sum()
+    s.main()
 }
 
