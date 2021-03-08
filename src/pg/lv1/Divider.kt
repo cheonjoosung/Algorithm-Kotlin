@@ -5,6 +5,11 @@ class Divider {
         var answer = 0
 
         /*
+        let =
+        var =
+         */
+
+        /*
         1번 방식
          */
         answer = (1..n).filter { n % it == 0 }.sum()
@@ -18,15 +23,6 @@ class Divider {
         val half = Math.sqrt(n.toDouble()).toInt()
 
         for (i in 1..half) {
-            if (n % i == 0) {
-                answer += i
-                if (i != n / i) answer += n / i
-            }
-        }
-
-        /* 3번 방식
-         */
-        for (i in 1..n) {
             if (n % i == 0) {
                 answer += i
                 if (i != n / i) answer += n / i
