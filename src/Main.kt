@@ -1,3 +1,4 @@
+import backjun.g3.MulArray
 import backjun.g3.PrimeNumContinue
 import backjun.g3.Sum
 import backjun.s1.SumbaGGozil
@@ -29,7 +30,7 @@ fun main() {
     p.main() */
 
 
-    val s = SumbaGGozil()
+    val s = MulArray()
     s.main()
 }
 
