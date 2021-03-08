@@ -1,5 +1,6 @@
 import backjun.g3.PrimeNumContinue
 import backjun.g3.Sum
+import backjun.s1.SumbaGGozil
 import pg.lv2.*
 import java.util.*
 
@@ -28,7 +29,7 @@ fun main() {
     p.main() */
 
 
-    val s = Sum()
+    val s = SumbaGGozil()
     s.main()
 }
 
