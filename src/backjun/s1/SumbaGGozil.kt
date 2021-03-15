@@ -40,7 +40,6 @@ class SumbaGGozil {
 
         println(answer)
         sc.close()
-
     }
 }
 
