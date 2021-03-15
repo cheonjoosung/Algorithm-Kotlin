@@ -1,8 +1,5 @@
 package pg.lv2;
 
-import com.sun.corba.se.spi.presentation.rmi.IDLNameTranslator;
-
-import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
