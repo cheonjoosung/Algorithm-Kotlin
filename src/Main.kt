@@ -1,6 +1,7 @@
 import backjun.g3.MulArray
 import backjun.g3.PrimeNumContinue
 import backjun.g3.Sum
+import backjun.s1.StarPrint10
 import backjun.s1.SumbaGGozil
 import pg.lv2.*
 import java.util.*
@@ -30,7 +31,7 @@ fun main() {
     p.main() */
 
 
-    val s = MulArray()
+    val s = StarPrint10()
     s.main()
 }
 
