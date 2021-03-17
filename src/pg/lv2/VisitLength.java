@@ -5,8 +5,8 @@ import java.util.Objects;
 
 public class VisitLength {
     public static void main(String[] args) {
-        System.out.println(solution("ULURRDLLU")); //7
-        System.out.println(solution("LULLLLLLU")); //7
+        System.out.println(solution("ULURRDLLU")); //7 ?
+        System.out.println(solution("LULLLLLLU")); //7  ?
     }
 
     public static int solution(String dirs) {
