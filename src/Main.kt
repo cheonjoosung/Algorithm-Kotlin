@@ -1,3 +1,5 @@
+import backjun.b.P2750
+import backjun.b.P2751
 import backjun.g3.MulArray
 import backjun.g3.PrimeNumContinue
 import backjun.g3.Sum
@@ -31,7 +33,7 @@ fun main() {
     p.main() */
 
 
-    val s = StarPrint10()
+    val s = P2751()
     s.main()
 }
 
