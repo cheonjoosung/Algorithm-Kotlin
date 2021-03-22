@@ -1,4 +1,5 @@
 import backjun.g3.NumberK
+import backjun.g3.Scale
 import pg.lv2.*
 import java.util.*
 
@@ -27,7 +28,7 @@ fun main() {
     p.main() */
 
 
-    val s = NumberK()
+    val s = Scale()
     s.main()
 }
 
