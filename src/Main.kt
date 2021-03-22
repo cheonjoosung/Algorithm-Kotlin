@@ -1,10 +1,4 @@
-import backjun.b.P2750
-import backjun.b.P2751
-import backjun.g3.MulArray
-import backjun.g3.PrimeNumContinue
-import backjun.g3.Sum
-import backjun.s1.StarPrint10
-import backjun.s1.SumbaGGozil
+import backjun.g3.NumberK
 import pg.lv2.*
 import java.util.*
 
@@ -33,7 +27,7 @@ fun main() {
     p.main() */
 
 
-    val s = P2751()
+    val s = NumberK()
     s.main()
 }
 
