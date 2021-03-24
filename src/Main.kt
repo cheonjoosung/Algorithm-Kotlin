@@ -1,5 +1,6 @@
 import backjun.g3.NumberK
 import backjun.g3.Scale
+import backjun.s1.TreeExit
 import pg.lv2.*
 import java.util.*
 
@@ -28,7 +29,7 @@ fun main() {
     p.main() */
 
 
-    val s = Scale()
+    val s = TreeExit()
     s.main()
 }
 
