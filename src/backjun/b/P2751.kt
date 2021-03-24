@@ -21,8 +21,6 @@ class P2751 {
             arr.add(br.readLine().toInt())
         }
 
-        Collections.sort(arr)
-
         arr.sort()
 
         val sb = StringBuilder()
