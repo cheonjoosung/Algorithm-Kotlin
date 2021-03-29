@@ -1,6 +1,6 @@
 package backjun.s1
 
-import java.util.ArrayList
+import java.util.*
 
 class TreeExit {
 
@@ -32,6 +32,7 @@ class TreeExit {
     }
 
     private fun dfs(index: Int, cnt: Int) {
+
         visited[index] = true
         var flag = false
 
@@ -43,9 +44,13 @@ class TreeExit {
                 flag = true
                 dfs(node, cnt + 1)
             }
+
+
         }
 
         if (!flag) ans += cnt
     }
+
+
 }
 
