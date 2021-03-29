@@ -1,35 +1,20 @@
-import backjun.g3.NumberK
-import backjun.g3.Scale
-import backjun.s1.TreeExit
-import pg.lv2.*
-import java.util.*
+import pg.lv2.MenuRenewal
 
-private val answer = 4
 fun main() {
-    /*
-     LV1~LV2 7문제 풀기
-     조이스틱, 메뉴 리뉴얼, 순위 검색, 쿼드압 후 개수세기, 후보키
-     */
-    /*[
-        ["100","ryan","music","2"],["200","apeach","math","2"],["300","tube","computer","3"],
-        ["400","con","computer","4"],["500","muzi","music","3"],["600","apeach","music","2"]
-    ]
-    val c = CandidateKey()
-    val arr: Array<Array<String>> = arrayOf(
-        arrayOf("100", "ryan", "music", "2"),
-        arrayOf("200", "apeach", "math", "2"),
-        arrayOf("300", "tube", "computer", "3"),
-        arrayOf("400", "con", "computer", "4"),
-        arrayOf("500", "muzi", "music", "3"),
-        arrayOf("600", "apeach", "music", "2")
-    )
-    c.solution(arr)
 
-    val p = PrimeNumContinue()
-    p.main() */
+    val s = MenuRenewal()
 
+    val o1 = arrayOf("ABCFG", "AC", "CDE", "ACDE", "BCFG", "ACDEH")
+    val c1 = intArrayOf(2, 3, 4)
 
-    val s = TreeExit()
-    s.main()
+    val o2 = arrayOf("ABCDE", "AB", "CD", "ADE", "XYZ", "XYZ", "ACD")
+    val c2 = intArrayOf(2, 3, 5)
+
+    val o3 = arrayOf("XYZ", "XWY", "WXA")
+    val c3 = intArrayOf(2, 3, 4)
+
+    println(s.solution(o1, c1))
+    println(s.solution(o2, c2))
+    println(s.solution(o3, c3))
 }
 
