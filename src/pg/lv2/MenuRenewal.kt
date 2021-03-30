@@ -1,59 +1,104 @@
 package pg.lv2
 
+import kotlin.math.max
+
 class MenuRenewal {
     /*
     ["ABCFG", "AC", "CDE", "ACDE", "BCFG", "ACDEH"]	[2,3,4]     =>	["AC", "ACDE", "BCFG", "CDE"]
     ["ABCDE", "AB", "CD", "ADE", "XYZ", "XYZ", "ACD"] [2,3,5]   =>	["ACD", "AD", "ADE", "CD", "XYZ"]
     ["XYZ", "XWY", "WXA"]	[2,3,4]	                            =>  ["WX", "XY"]
      */
+    var maxStr = ""
+    var maxCnt = 0
+    var tempList = mutableListOf<String>()
+
     fun solution(orders: Array<String>, course: IntArray): Array<String> {
-        var answer: Array<String> = emptyArray()
-
-
-        /*
-        ABC  FG
-        A C
-          CDE
-        A CDE
-        B C  FG
-        A CDE  H
-
-        결과값의 (코스요리문자열, 코스수)를 문자열 오름름차순 정렬
-        1. orders 길이로 오름차순 정
-        2. 주어진 코스 길이내에서 가능한 모든 문자열의 조합을 찾아서 리스트에 추가
-        3. 정렬 끝
-         */
+        var answer = mutableListOf<String>()
 
         orders.sortBy { it.length }
 
-        for (i in orders.indices) {
+        for (i in course.indices) { //2, 3, 4
 
-            val str = orders[i]
+            for (j in orders.indices) {
 
-            for (i in course.indices) {
-                val visited = BooleanArray(i) { false }
-                find(str, course[i], 0, visited)
+                val str = orders[j]
+                val visited = BooleanArray(str.length) { false }
+
+                find(str, course[i], 0, visited, 0, orders)
             }
+
+            if (maxCnt != 0) { //
+//                println("$maxStr $maxCnt")
+
+                maxStr = ""
+                maxCnt = 0
+            }
+
+            answer.addAll(tempList)
+            tempList = mutableListOf()
         }
 
-        return answer
+        answer.sort()
+//        for (i in answer.indices)
+//            println("ans ${answer[i]}")
+
+
+        return answer.toTypedArray()
     }
 
-    fun find(str: String, n: Int, cnt: Int, visited: BooleanArray) {
+    private fun find(str: String, n: Int, cnt: Int, visited: BooleanArray, idx: Int, orders: Array<String>) {
         if (n == cnt) {
-            //add menu
+            val menu = StringBuilder()
+
+            for (i in visited.indices) {
+                if (visited[i]) {
+                    menu.append(str[i])
+                }
+            }
+
+            var matchCnt = 0
+            for (order in orders) {
+                var res = true
+
+                for (i in menu.indices) {
+                    val c = menu[i]
+
+                    if (!order.contains(c)) {
+                        res = false
+                        break
+                    }
+                }
+
+                if (res) {
+                    matchCnt++
+                }
+
+            }
+
+            if (matchCnt >= 2) {
+                if (matchCnt > maxCnt) {
+                    maxCnt = matchCnt
+                    maxStr = menu.toString()
+
+                    tempList = mutableListOf()
+                    tempList.add(menu.toList().sorted().joinToString(""))
+                } else if (matchCnt == maxCnt) {
+                    if (!tempList.contains(menu.toList().sorted().joinToString("")))
+                        tempList.add(menu.toList().sorted().joinToString(""))
+                }
+
+            }
+
             return
         }
 
-        for (i in 0..str.length) {
+        for (i in idx until str.length) {
             if (visited[i]) continue
 
             visited[i] = true
-            find(str, n, cnt + 1, visited)
+            find(str, n, cnt + 1, visited, i + 1, orders)
             visited[i] = false
         }
 
     }
 }
-
-data class Menu(var menu: String, var cnt: Int)
