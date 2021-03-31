@@ -1,20 +1,23 @@
 import pg.lv2.MenuRenewal
+import java.util.*
 
 fun main() {
 
-    val s = MenuRenewal()
+    val list: List<Int> = ArrayList<Int>()
+    val vector: List<Int> = Vector<Int>()
+    val arrayList: ArrayList<Int> = ArrayList<Int>()
 
-    val o1 = arrayOf("ABCFG", "AC", "CDE", "ACDE", "BCFG", "ACDEH")
-    val c1 = intArrayOf(2, 3, 4)
+    method1(list)
+    method1(vector)
+    method1(arrayList)
 
-    val o2 = arrayOf("ABCDE", "AB", "CD", "ADE", "XYZ", "XYZ", "ACD")
-    val c2 = intArrayOf(2, 3, 5)
+//    method2(list)
+//    method2(vector)
+    method2(arrayList)
 
-    val o3 = arrayOf("XYZ", "XWY", "WXA")
-    val c3 = intArrayOf(2, 3, 4)
-
-    println(s.solution(o1, c1))
-    println(s.solution(o2, c2))
-    println(s.solution(o3, c3))
 }
+
+fun method1(list: List<Int>) { }
+
+fun method2(list: ArrayList<Int>) { }
 
