@@ -32,13 +32,12 @@ public class GameShortcut {
 
         q.add(new P(0, 0, 1));
 
-
         while (!q.isEmpty()) {
             P p = q.poll();
             isVisited[p.x][p.y] = true;
             maps[p.x][p.y] = p.move;
 
-            for (int i = 0; i < 4; i++) {
+            for (int i = 0; i < 4; i++) { //동서남북
                 int nx = p.x + dx[i];
                 int ny = p.y + dy[i];
 
@@ -50,7 +49,6 @@ public class GameShortcut {
                 q.add(new P(nx, ny, p.move + 1));
             }
         }
-
 
         if (maps[row - 1][col - 1] == 1 || maps[row - 1][col - 1] == 0) {
             return -1;
