@@ -33,9 +33,6 @@ class Exchange {
             2-1. 교체x && wantX 가 없으면 큐에 제거
             2-2. 그 반대의 경우 큐에 넣기 (idx <-> nxIdx) 교체중 둘중 하나가 된 경우
          */
-        //1. input을 큐에 넣기
-        //2
-        //2. 이 중에 output 에서 matched == false 찾아서 바꾸기
 
         while (!q.isEmpty()) {
 
