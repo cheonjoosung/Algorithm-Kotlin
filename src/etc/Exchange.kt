@@ -26,8 +26,15 @@ class Exchange {
             }
         }
 
-        //종료조건 홀수면 더이상 교체 불가능한 경
-        //1. input 처음부터 끝까지의 값을 탐색
+        /*
+            종료조건 큐 empty
+            1. input 을 큐에 넣기
+            2. 큐에 꺼내고 matched 중에 찾아서 교체
+            2-1. 교체x && wantX 가 없으면 큐에 제거
+            2-2. 그 반대의 경우 큐에 넣기 (idx <-> nxIdx) 교체중 둘중 하나가 된 경우
+         */
+        //1. input을 큐에 넣기
+        //2
         //2. 이 중에 output 에서 matched == false 찾아서 바꾸기
 
         while (!q.isEmpty()) {
