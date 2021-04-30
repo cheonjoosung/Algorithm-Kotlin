@@ -3,20 +3,28 @@ import etc.Exchange
 import etc.Train
 import pg.lv2.CandidateKey
 import pg.lv2.MenuRenewal
+import pg.lv2.TargetNumber
 import java.util.*
 
 fun main() {
 
-    val ex = CandidateKey()
-    var arr = arrayOf(
-        arrayOf("100", "ryan", "music", "2"),
-        arrayOf("200", "apeach", "math", "2"),
-        arrayOf("300", "tube", "computer", "3"),
-        arrayOf("400", "con", "computer", "4"),
-        arrayOf("500", "muzi", "music", "3"),
-        arrayOf("600", "apeach", "music", "2")
+    val appleList = listOf(
+        Apple("a++", 500),
+        Apple("a+", 400),
+        Apple("a", 300),
+        Apple("b", 200),
+        Apple("c", 100)
     )
-    println(ex.solution(arr))
+
+    val applePrice = appleList.map { it.price }.fold(0, { total, next -> total + next })
+    println("applePrice : ${applePrice}")
+
+
+    val ex = TargetNumber()
+    val arr = intArrayOf(1, 1, 1, 1, 1)
+    println(ex.solution(arr, -3))
+
 }
 
+data class Apple(val grade: String,val price: Int)
 

@@ -3,7 +3,6 @@ package pg.lv2
 import java.util.ArrayList
 import java.util.HashMap
 
-//https://velog.io/@hyeon930/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%ED%9B%84%EB%B3%B4%ED%82%A4-Java
 class CandidateKey {
 //    [["100","ryan","music","2"]
 //    ["200","apeach","math","2"],
@@ -56,7 +55,7 @@ class CandidateKey {
 
             for (th in 0 until col) {
                 // 1 << th th번째 자릿수 1 << 3 = 1000(2)
-                // set & (1 << 소) 해당 set과 같은 자리 찾아서 키 만드는 작업
+                // set & (1 << th) 해당 set과 같은 자리 찾아서 키 만드는 작업
                     println("$set ${1 shl th} ${set and (1 shl th) != 0}")
                 if (set and (1 shl th) != 0) {
                     // set 10 2번째 인덱스와 같은 것만 키로 만드는 작업
