@@ -3,6 +3,7 @@ import etc.Exchange
 import etc.Train
 import pg.lv2.CandidateKey
 import pg.lv2.MenuRenewal
+import pg.lv2.RotateBracket
 import pg.lv2.TargetNumber
 import java.util.*
 
@@ -20,10 +21,11 @@ fun main() {
     println("applePrice : ${applePrice}")
 
 
-    val ex = TargetNumber()
-    val arr = intArrayOf(1, 1, 1, 1, 1)
-    println(ex.solution(arr, -3))
-
+    val ex = RotateBracket()
+    println(ex.solution( "[](){}"))
+    println(ex.solution( "}]()[{"))
+    println(ex.solution( "[)(]"))
+    println(ex.solution( "}}}"))
 }
 
 data class Apple(val grade: String,val price: Int)
