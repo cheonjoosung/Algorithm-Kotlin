@@ -1,32 +1,30 @@
 import backjun.s1.Bachu
 import etc.Exchange
 import etc.Train
-import pg.lv2.CandidateKey
-import pg.lv2.MenuRenewal
-import pg.lv2.RotateBracket
-import pg.lv2.TargetNumber
+import pg.lv2.*
 import java.util.*
 
 fun main() {
 
-    val appleList = listOf(
-        Apple("a++", 500),
-        Apple("a+", 400),
-        Apple("a", 300),
-        Apple("b", 200),
-        Apple("c", 100)
+    val str: Array<Array<String>> = arrayOf(
+        arrayOf("ICN", "JFK"),
+        arrayOf("HND", "IAD"),
+        arrayOf("JFK", "HND")
     )
 
-    val applePrice = appleList.map { it.price }.fold(0, { total, next -> total + next })
-    println("applePrice : ${applePrice}")
+    val str2 = arrayOf(
+        arrayOf("ICN", "SFO"),
+        arrayOf("ICN", "ATL"),
+        arrayOf("SFO", "ATL"),
+        arrayOf("ATL", "ICN"),
+        arrayOf("ATL", "SFO"),
+    )
 
+    val a = TripRoute()
 
-    val ex = RotateBracket()
-    println(ex.solution( "[](){}"))
-    println(ex.solution( "}]()[{"))
-    println(ex.solution( "[)(]"))
-    println(ex.solution( "}}}"))
+//    println(a.solution(str))
+
+    val b = TripRoute()
+    println(b.solution(str2))
 }
-
-data class Apple(val grade: String,val price: Int)
 

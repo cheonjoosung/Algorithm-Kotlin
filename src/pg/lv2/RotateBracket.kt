@@ -11,6 +11,7 @@ class RotateBracket {
 
         for (i in 0 until size) {
             val tempStr = s.substring(i, size).plus(s.substring(0, i))
+
             if (isCorrectBracket(tempStr, size))
                 answer++
         }
@@ -22,10 +23,10 @@ class RotateBracket {
 
         val list = mutableListOf<Char>()
 
-        for (i in 0 until size){
+        for (i in 0 until size) {
 
             when (val ch = str[i]) {
-                '{','[','(' -> { // push
+                '{', '[', '(' -> { // push
                     list.add(ch)
                 }
                 else -> { // pop
@@ -34,7 +35,7 @@ class RotateBracket {
                     } else {
                         val lastIdx = list.lastIndex
 
-                        val tempCh = when(ch){
+                        val tempCh = when (ch) {
                             ']' -> '['
                             '}' -> '{'
                             else -> '('
@@ -51,5 +52,4 @@ class RotateBracket {
 
         return list.size == 0
     }
-
 }
