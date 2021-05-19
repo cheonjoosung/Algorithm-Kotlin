@@ -1,26 +1,32 @@
+import pg.lv2.ArrayRotation
 import pg.lv3.TripRoute
 
 fun main() {
 
-    val str: Array<Array<String>> = arrayOf(
-        arrayOf("ICN", "JFK"),
-        arrayOf("HND", "IAD"),
-        arrayOf("JFK", "HND")
+    val b = ArrayRotation()
+    val a1 = arrayOf(
+        intArrayOf(2, 2, 5, 4),
+        intArrayOf(3, 3, 6, 6),
+        intArrayOf(5, 1, 6, 3)
     )
 
-    val str2 = arrayOf(
-        arrayOf("ICN", "SFO"),
-        arrayOf("ICN", "ATL"),
-        arrayOf("SFO", "ATL"),
-        arrayOf("ATL", "ICN"),
-        arrayOf("ATL", "SFO"),
+    val a2 = arrayOf(
+        intArrayOf(1, 1, 2, 2),
+        intArrayOf(1, 2, 2, 3),
+        intArrayOf(2, 1, 3, 2),
+        intArrayOf(2, 2, 3, 3)
     )
 
-    val a = TripRoute()
+    val a3 = arrayOf(
+        intArrayOf(1, 1, 100, 97)
+    )
 
-//    println(a.solution(str))
-
-    val b = TripRoute()
-    println(b.solution(str2))
+    val a4 = arrayOf(
+        intArrayOf(1, 1, 2, 2)
+    )
+    println(b.solution(6, 6, a1))
+    println(b.solution(3, 3, a2))
+    println(b.solution(100, 97, a3))
+//    println(b.solution(2, 2, a4))
 }
 
