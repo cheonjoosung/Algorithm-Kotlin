@@ -5,12 +5,11 @@ class ArrayRotation {
     fun solution(rows: Int, columns: Int, queries: Array<IntArray>): IntArray {
         var answer = mutableListOf<Int>()
 
-        var temp = Array(rows) { j ->
-            IntArray(columns) { i -> i + columns * (j) + 1 }
-        }
+        var temp = Array(rows) { j -> IntArray(columns) { i -> i + columns * (j) + 1 } }
+
+
 
         for (arr in queries) {
-
             val x1 = arr[0] - 1
             val y1 = arr[1] - 1
             val x2 = arr[2] - 1
@@ -29,6 +28,9 @@ class ArrayRotation {
         val dx = intArrayOf(0, 1, 0, -1)
         val dy = intArrayOf(1, 0, -1, 0)
 
+        // dfs - bfs
+        /* 모방은 창조의 어머니 카피앤페이스*/
+
         var d = 0
         var nx = x1
         var ny = y1
@@ -38,7 +40,12 @@ class ArrayRotation {
         var min = Math.min(Int.MAX_VALUE, temp[x1][y1])
 
         while (true) {
-
+            /*
+                (x1,y1) 트 -->   (x1,y2)
+                   ↑              |
+                   |              ↓
+                (x2,y1)  <--   (x2,y2)
+             */
             if (nx == x1 && ny == y2) d = 1
             if (nx == x2 && ny == y2) d = 2
             if (nx == x2 && ny == y1) d = 3
@@ -54,7 +61,7 @@ class ArrayRotation {
 
             if (nx == x1 && ny == y1) {
                 temp[nx][ny] = before
-                break;
+                break
             }
         }
 
