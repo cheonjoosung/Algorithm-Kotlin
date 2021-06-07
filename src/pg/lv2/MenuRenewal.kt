@@ -27,9 +27,7 @@ class MenuRenewal {
                 find(str, course[i], 0, visited, 0, orders)
             }
 
-            if (maxCnt != 0) { //
-//                println("$maxStr $maxCnt")
-
+            if (maxCnt != 0) { //갱신여부체크
                 maxStr = ""
                 maxCnt = 0
             }
@@ -39,9 +37,6 @@ class MenuRenewal {
         }
 
         answer.sort()
-//        for (i in answer.indices)
-//            println("ans ${answer[i]}")
-
 
         return answer.toTypedArray()
     }
@@ -52,7 +47,7 @@ class MenuRenewal {
 
             for (i in visited.indices) {
                 if (visited[i]) {
-                    menu.append(str[i])
+                    menu.append(str[i]) //메뉴 찾기 ABC -> 메뉴수2개이면 (AC, AB, BC)
                 }
             }
 
