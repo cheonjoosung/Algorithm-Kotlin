@@ -10,5 +10,9 @@ class BestAlbum {
             .map { it -> it.second.sortedByDescending { plays[it] }.take(2) } // [[4,1],[3,0]]
             .flatten() // [4, 1, 3, 0]
             .toIntArray()
+
+        //val sortedList = list.sortedWith(compareBy(Person::age, Person::name))
     }
 }
+
+data class Test(val age: Int, var name: String, val address: String)
