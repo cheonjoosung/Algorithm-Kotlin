@@ -12,7 +12,7 @@ class P9020 {
         val tc = sc.nextInt()
 
         val isNotPrime = BooleanArray(10_000 + 1) { false }
-        checkIsNotPriem(isNotPrime)
+        checkIsNotPrime(isNotPrime)
 
         for (i in 1..tc) {
             val evenNum = sc.nextInt()
@@ -39,16 +39,16 @@ class P9020 {
         sc.close()
     }
 
-    private fun checkIsNotPriem(isNotPrime: BooleanArray) {
+    private fun checkIsNotPrime(isNotPrime: BooleanArray) {
         isNotPrime[0] = true
         isNotPrime[1] = true
 
         for (i in 2..10_000) {
             if (isNotPrime[i]) continue
 
-            for (j in 2..10_000) {
+            for (j in 2 * i..10_000) {
                 if (i * j > 10_000) continue
-                isNotPrime[i * j] = true
+                isNotPrime[j] = true
             }
         }
     }
