@@ -1,15 +1,10 @@
 import kotlinx.coroutines.*
-import kotlin.system.measureTimeMillis
 
 fun main() {
     val arr = arrayOf("hi", "bye", "ki").forEach { println(it) }
-//    println(arr.contentToString())
+    println(arr)
 }
 
-suspend fun wwprintln() {
-    delay(2000L)
-    println("hihihio")
-}
 
 suspend fun sum(): Int = coroutineScope {
     val one = async { doOne() }
@@ -30,8 +25,4 @@ suspend fun doTwo(): Int {
     delay(1000L)
     println("End two")
     return 29
-}
-
-fun <T> println(msg: T) {
-    kotlin.io.println("$msg [${Thread.currentThread().name}]")
 }
