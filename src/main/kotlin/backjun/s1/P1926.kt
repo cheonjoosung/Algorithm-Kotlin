@@ -37,7 +37,7 @@ fun main() {
             if (visit[i][j] == 0 && map[i][j] == 1) {
                 visit[i][j] = 1
                 temp_square = 1
-                dfs(i, j)
+                dfs2(i, j)
                 picture_cnt++
             }
         }
@@ -47,7 +47,7 @@ fun main() {
     println(answer)
 }
 
-private fun dfs(idx: Int, jdx: Int) {
+fun dfs2(idx: Int, jdx: Int) {
     if (answer < temp_square) answer = temp_square
 
     for (i in 0..3) {
@@ -56,6 +56,6 @@ private fun dfs(idx: Int, jdx: Int) {
         if (nx < 0 || ny < 0 || nx >= n || ny >= m || visit[nx][ny] == 1 || map[nx][ny] == 0) continue
         temp_square++
         visit[nx][ny] = 1
-        dfs(nx, ny)
+        dfs2(nx, ny)
     }
 }
