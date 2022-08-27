@@ -52,15 +52,12 @@ fun solution(survey: Array<String>, choices: IntArray): String {
 
 private fun check(point: Int, choice: String, arr: IntArray) {
 
-    //println("$choice $point")
     when {
         point == 0 -> {}
         point < 0 -> point(choice[0], arr, Math.abs(point))
         point > 0 -> point(choice[1], arr, point)
     }
 
-    //arr.forEach { print("$it ") }
-    //println()
 }
 
 private fun point(ch: Char, arr: IntArray, point: Int) {
