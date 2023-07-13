@@ -54,6 +54,4 @@ fun main() {
     val list6 = ListNode(1)
     list4.next = list5
     list5.next = list6
-
-    P21_MergeTwoSortedLists().mergeTwoLists(list1, list4)
 }
