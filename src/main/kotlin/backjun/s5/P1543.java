@@ -30,6 +30,11 @@ public class P1543 {
         }
 
         System.out.println(count);  // 결과 출력
+
+        /* 길이로 풀기
+            String newDoc = document.replace(word,"");
+            System.out.println((document.length()-newDoc.length())/word.length());
+         */
         scanner.close();
     }
 }
