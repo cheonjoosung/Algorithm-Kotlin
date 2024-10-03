@@ -6,7 +6,7 @@ import java.util.Scanner;
  * S4 행운의바퀴
  */
 
-public class P2817 {
+public class P2840 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
