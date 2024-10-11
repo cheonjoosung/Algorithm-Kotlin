@@ -1,8 +1,8 @@
 package backjun.s5;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Scanner;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.*;
 
 /**
  * S5 나이순 정렬
@@ -12,7 +12,7 @@ public class P10814 {
         Scanner sc = new Scanner(System.in);
 
         int n = sc.nextInt();
-        ArrayList<Memeber> list = new ArrayList<>();
+        List<Memeber> list = new ArrayList<>();
 
         int idx = 0;
         while (n-- > 0) {
@@ -22,16 +22,7 @@ public class P10814 {
             list.add(new Memeber(idx, age, name));
         }
 
-        list.sort(new Comparator<Memeber>() {
-            @Override
-            public int compare(Memeber o1, Memeber o2) {
-                if (o1.age < o2.age) return -1;
-                else if (o1.age == o2.age) {
-                    if (o1.idx < o2.idx) return -1;
-                    else return 1;
-                } else return 1;
-            }
-        });
+        Collections.sort(list);
 
         for (Memeber m : list) {
             System.out.println(m.age + " " + m.name);
@@ -41,7 +32,7 @@ public class P10814 {
         sc.close();
     }
 
-    static class Memeber {
+    static class Memeber implements Comparable<Memeber> {
         int idx;
         int age;
         String name;
@@ -50,6 +41,15 @@ public class P10814 {
             this.idx = idx;
             this.age = age;
             this.name = name;
+        }
+
+        @Override
+        public int compareTo(Memeber other) {
+            if (this.age != other.age) {
+                return Integer.compare(this.age, other.age);  // 나이 순으로 정렬
+            } else {
+                return Integer.compare(this.idx, other.idx);  // 가입 순서로 정렬
+            }
         }
     }
 }
