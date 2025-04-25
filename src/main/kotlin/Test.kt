@@ -1,27 +1,18 @@
 import javax.swing.text.View
 
-fun main () {
 
-    val bankInterface = object : BankInterface {
-        override fun account() {
-            println("Interface Account")
-        }
-    }
-
-    val bankClass = object : BankClass() {
-        override fun account() {
-            println("abstract Class Account")
-        }
-    }
-
-    println(bankInterface.account())
-    println(bankClass.account())
-}
-
-interface BankInterface {
-    fun account()
-}
-
-abstract class BankClass {
-    abstract fun account()
+fun main() {
+    val park = Park()
+    park.solution(
+        intArrayOf(5, 3, 2),
+        arrayOf(
+            arrayOf("A", "A", "-1", "B", "B", "B", "B", "-1"),
+            arrayOf("A", "A", "-1", "B", "B", "B", "B", "-1"),
+            arrayOf("-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1"),
+            arrayOf("-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1"),
+            arrayOf("D", "D", "-1", "-1", "-1", "-1", "E", "-1"),
+            arrayOf("D", "D", "-1", "-1", "-1", "-1", "-1", "F"),
+            arrayOf("D", "D", "-1", "-1", "-1", "-1", "-1", "F")
+        )
+    ).also { println(it) }
 }
