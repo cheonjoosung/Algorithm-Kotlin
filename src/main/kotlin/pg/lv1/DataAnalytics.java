@@ -1,3 +1,4 @@
+/*
 package pg.lv1;
 
 import java.util.*;
@@ -71,3 +72,4 @@ class Product {
         this.code = code; this.date = date; this.maxiMum = maxiMum; this.remain = remain;
     }
 }
+*/
